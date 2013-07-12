@@ -1,3 +1,19 @@
+# bashrc  
+# On Mac OS X, link to this as bash_profile because
+# Mac loads bash_profile on login. Unix loads bashrc on login.
+#
+# ln -s ~/bin/dotfiles/bash/bashrc ~/.bash_profile
+
+
+# Display greeting on login
+
+echo ""
+echo -n "Unix on Mac OS X. Logged in as "; whoami
+echo ""
+echo -n "Today is "; date "+%d %B %Y %R %z"
+echo ""
+cal
+
 # User specific environment and startup programs
 echo -n "Uptime: "; uptime
 ##
@@ -15,11 +31,11 @@ echo -n "Uptime: "; uptime
 #unset file
 
 # Lewy's simplified startup
-source ~/.bash_functions
-source ~/.bash_extra
-source ~/.bash_alias
-source ~/.bash_exports
-source ~/.bash_prompt
+source ~/bin/dotfiles/bash/.bash_functions
+source ~/bin/dotfiles/bash/bash_extra
+source ~/bin/dotfiles/bash/bash_alias
+source ~/bin/dotfiles/bash/bash_exports
+source ~/bin/dotfiles/bash/bash_prompt
 
 
 

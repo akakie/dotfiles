@@ -1,0 +1,118 @@
+# Identify the source
+# Lewy aliases
+
+#-------------------------------------------------------------
+# -> Prevents accidentally clobbering files.
+# Note: use trash instead of rm to delete files/folders
+#-------------------------------------------------------------
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Mac Helpers
+alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
+
+alias ping='ping -c 3'      # limit pings to three
+
+# Makes disk space output more readable.
+alias df='df -h'            # Disk free, in gigabytes, not bytes
+alias du='du -h -c'         # Calculate total disk usage for a folder
+
+#-------------------------------------------------------------
+# Navigation
+#-------------------------------------------------------------
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias sites='cd ~/Sites'
+alias desk='cd ~/Desktop'
+alias down='cd ~/Downloads'
+alias www='cd ~/www'
+alias hosts='sudo $EDITOR /etc/hosts'
+
+alias htdocs='cd /Applications/MAMP/htdocs'
+alias sql='/Applications/xampp/xamppfiles/bin/mysql'
+
+#alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias print='/usr/bin/lp -o nobanner -d $LPDEST'
+            # Assumes LPDEST is defined (default printer)
+alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
+            # Pretty-print using enscript
+
+
+#-------------------------------------------------------------
+# aliases for commands
+#-------------------------------------------------------------
+
+alias h='history'
+alias j='jobs -l'
+alias v="open -a macvim"
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+type -t md5sum > /dev/null || alias md5sum="md5"
+alias which='type -a'
+alias getini='php -i | grep "Loaded Configuration File"'
+alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
+
+alias flush="dscacheutil -flushcache"  # Flush Directory Service cache
+alias trimcopy="tr -d '\n' | pbcopy"  # Trim new lines and copy to clipboard
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"  # delete ds_store
+alias fs="stat -f \"%z bytes\""        # file size
+
+
+# Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+#-------------------------------------------------------------
+# aliases for ls commands
+#-------------------------------------------------------------
+
+alias ll="ls -lahG"  # List all files colorized in long format
+alias lsd='ls -l | grep "^d"'  # List only directories
+
+
+#-------------------------------------------------------------
+# aliases for git
+# see also .git/config for aliases
+#-------------------------------------------------------------
+alias g="git"
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias undopush="git push -f origin HEAD^:master"  # Undo a `git push`
+
+#-------------------------------------------------------------
+# Network support: IP addresses
+#-------------------------------------------------------------
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias whois="whois -h whois-servers.net"  # Enhanced WHOIS lookups
+
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+
+#-------------------------------------------------------------
+# open applications in finder
+#-------------------------------------------------------------
+alias firefox='open -a firefox'
+alias chrome='open -a chrome'
+
+# === Applescript aliases ===
+
+
+# handy things (stashed here) for use on OS X
+#TODO consider adding these tools
+#alias bunyip='node ~/code/bunyip/cli.js'
+#alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
+
+
+
+##  end Lewy's aliases
