@@ -31,11 +31,11 @@ echo -n "Uptime: "; uptime
 #unset file
 
 # Lewy's simplified startup
-source ~/bin/dotfiles/bash/.bash_functions
-source ~/bin/dotfiles/bash/bash_extra
-source ~/bin/dotfiles/bash/bash_alias
-source ~/bin/dotfiles/bash/bash_exports
-source ~/bin/dotfiles/bash/bash_prompt
+source ~/bin/dotfiles/bash/functions
+source ~/bin/dotfiles/bash/extra
+source ~/bin/dotfiles/bash/alias
+source ~/bin/dotfiles/bash/exports
+source ~/bin/dotfiles/bash/prompt
 
 
 
