@@ -1,24 +1,25 @@
+# EXTRA
 ##
-# Paul Irish dotfiles for setting up work environment
-# source: paulirish/dotfiles - GitHub
-# Includes adaptations for Lewy MacBook
-# Component: .bash_extra (add stuff to the configuration)
+# Set up path to set order of searches for applications to load.
+# Local apps are inserted at the front of the path and are searched first.
+# Search priority is from top to bottom. Items are added at the END
+# of the path variable.
 ##
-# PATH like a bawss
-#CHANGED to incorporate my (excessive) PATH definitions
-      PATH=/usr/local/share/npm/bin
+
+PATH=/Users/lewy/bin
+PATH=$PATH:/usr/local/Cellar
+PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p362/bin
+PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/local/Cellar
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/share
-PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p362/bin
-PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/sbin
 #PATH=$PATH:/usr/X11/bin
-PATH=$PATH:/Users/lewy/bin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
+
 #PATH=$PATH:~/.rvm/bin
 #PATH=$PATH:~/code/git-friendly
 # To use MAMP version of php, uncomment next two lines
