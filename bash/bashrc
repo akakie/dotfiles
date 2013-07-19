@@ -32,7 +32,7 @@ echo -n "Uptime: "; uptime
 
 # Lewy's simplified startup
 source ~/bin/dotfiles/bash/functions
-source ~/bin/dotfiles/bash/extra
+source ~/bin/dotfiles/bash/path
 source ~/bin/dotfiles/bash/alias
 source ~/bin/dotfiles/bash/exports
 source ~/bin/dotfiles/bash/prompt
