@@ -4,13 +4,13 @@
 export LESS='-M'
 export MYNAME='Lewis Overton'
 
-#put path here
+#put path here (well, maybe)
 
 ##
 # Paul Irish dotfiles for setting up work environment
 # source: paulirish/dotfiles - GitHub
 # Includes adaptations for Lewy MacBook
-# Component: .bash_export (set some defaults)
+# Component: .bash_exports (set some defaults)
 
 ##
 # Choose a default editor from this list
@@ -27,6 +27,3 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups    #ignoredups:ignorespace
 export HISTTIMEFORMAT='%F %T '
 export HISTIGNORE=history:df:'ls:':cd:'cd -':pwd:exit:date:'* --help'
-
-# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
-# saved for later analysis
