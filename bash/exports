@@ -16,7 +16,7 @@ export MYNAME='Lewis Overton'
 # Choose a default editor from this list
 #export EDITOR="vim -W"
 #export EDITOR="subl -W"
-export EDITOR="mate -W"
+export EDITOR="mate"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
