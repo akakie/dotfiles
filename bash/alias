@@ -98,7 +98,7 @@ alias whois="whois -h whois-servers.net"  # Enhanced WHOIS lookups
 
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
 #-------------------------------------------------------------
 # open applications in finder
