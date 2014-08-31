@@ -4,8 +4,8 @@
 #
 # ln -s ~/bin/dotfiles/bash/bashrc ~/.bash_profile
 
-
-# Display greeting on login
+# On login to shell, display greeting messages and initialize
+# Homebrew application.
 
 echo ""
 echo -n "Unix on Mac OS X. Logged in as "; whoami
@@ -13,8 +13,25 @@ echo ""
 echo -n "Today is "; date "+%d %B %Y %R %z"
 echo ""
 cal
+echo "Last update to TextMate bundles"
+xattr -l ~/Library/Application\ Support/TextMate/Managed/Cache/org.textmate.updates.default
+
+###
+# Update Homebrew and list outdated formulae (in nohup.out)
+###
+# echo ""
+# rm nohup.out  # clear previous update
+# echo 'update Homebrew';  
+# echo "Updating HomeBrew. Please be patient"
+# nohup brew update  # wait for results
+# echo 'list outdated formulae';
+# nohup brew outdated &  # in background
+echo "Updating brew" 
+brew update > /dev/null &
+
 
 # User specific environment and startup programs
+echo ""
 echo -n "Uptime: "; uptime
 ##
 # Paul Irish dotfiles for setting up work environment

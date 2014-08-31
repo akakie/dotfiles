@@ -14,10 +14,17 @@ alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && kill
 alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 alias ping='ping -c 3'      # limit pings to three
+alias mate='/usr/bin/mate -w'
 
 # Makes disk space output more readable.
 alias df='df -h'            # Disk free, in gigabytes, not bytes
 alias du='du -h -c'         # Calculate total disk usage for a folder
+
+# a la XKCD
+# stfu works but generates error messages.
+# alias stfu="osascript -e 'set volume output muted true'"
+alias upblue="sudo nmap -sS bluehost.com"
+alias upband="sudo nmap -sS bluehost.com"
 
 #-------------------------------------------------------------
 # Navigation
@@ -32,10 +39,12 @@ alias sites='cd ~/Sites'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias www='cd ~/www'
+alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'
 
-alias htdocs='cd /Applications/MAMP/htdocs'
-alias sql='/Applications/xampp/xamppfiles/bin/mysql'
+# MAMP has been removed
+#alias htdocs='cd /Applications/MAMP/htdocs'
+#alias sql='/Applications/xampp/xamppfiles/bin/mysql'
 
 #alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
@@ -44,6 +53,12 @@ alias print='/usr/bin/lp -o nobanner -d $LPDEST'
 alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
             # Pretty-print using enscript
 
+#-------------------------------------------------------------
+# aliases for homebrew
+#-------------------------------------------------------------
+
+# system finds old nano, not newer one installed by homebrew
+alias nano='/usr/local/bin/nano'
 
 #-------------------------------------------------------------
 # aliases for commands
@@ -84,7 +99,11 @@ alias lsd='ls -l | grep "^d"'  # List only directories
 # see also .git/config for aliases
 #-------------------------------------------------------------
 alias g="git"
+
+# git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+# Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"  # Undo a `git push`
 
 #-------------------------------------------------------------
@@ -94,8 +113,11 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias extip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"  # Enhanced WHOIS lookups
 
+# View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
@@ -104,7 +126,7 @@ alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # open applications in finder
 #-------------------------------------------------------------
 alias firefox='open -a firefox'
-alias chrome='open -a chrome'
+alias chrome='open -a google\ chrome'
 
 # === Applescript aliases ===
 

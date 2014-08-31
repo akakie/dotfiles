@@ -5,9 +5,9 @@
 # Component: .bash_functions
 ##
 
-#open a man page in skim (or preview if you prefer)
+#open a man page in preview (skim or preview if you prefer)
 
-function manview { man -t "$1" | open -fa skim; }
+function manview { man -t "$1" | open -fa preview; }
 export -f manview
 
 # Create a new directory and enter it
