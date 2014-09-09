@@ -60,6 +60,10 @@ alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
 # system finds old nano, not newer one installed by homebrew
 alias nano='/usr/local/bin/nano'
 
+# brew update readline
+    LDFLAGS:  -L/usr/local/opt/readline/lib
+    CPPFLAGS: -I/usr/local/opt/readline/include
+
 #-------------------------------------------------------------
 # aliases for commands
 #-------------------------------------------------------------
