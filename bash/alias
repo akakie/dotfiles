@@ -61,8 +61,8 @@ alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
 alias nano='/usr/local/bin/nano'
 
 # brew update readline
-    LDFLAGS:  -L/usr/local/opt/readline/lib
-    CPPFLAGS: -I/usr/local/opt/readline/include
+#   LDFLAGS:  -L/usr/local/opt/readline/lib
+#   CPPFLAGS: -I/usr/local/opt/readline/include
 
 #-------------------------------------------------------------
 # aliases for commands
