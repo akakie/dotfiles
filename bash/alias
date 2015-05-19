@@ -1,20 +1,22 @@
 # Identify the source
-# Lewy aliases
+# ~/bin/dotfiles/bash
+echo "Directory $PWD";
 
 #-------------------------------------------------------------
 # -> Prevents accidentally clobbering files.
 # Note: use trash instead of rm to delete files/folders
 #-------------------------------------------------------------
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='remove -i'
+alias cp='copy -i'
+alias mv='move -i'
 
 # Mac Helpers
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 alias ping='ping -c 3'      # limit pings to three
-alias mate='/usr/bin/mate -w'
+export EDITOR="/usr/local/bin/mate -w"
+
 
 # Makes disk space output more readable.
 alias df='df -h'            # Disk free, in gigabytes, not bytes
@@ -31,15 +33,17 @@ alias upband="sudo nmap -sS bluehost.com"
 #-------------------------------------------------------------
 alias ..="cd .."
 alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
-alias sites='cd ~/Sites'
+
+alias sites='cd ~/sites'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias www='cd ~/www'
 alias please=sudo
+
+alias projects='cd ~/Projects'        # my projects
+alias dots='cd ~/bin/dotfiles/bash/'  # my bash dotfiles 
+
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # MAMP has been removed
@@ -55,10 +59,12 @@ alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
 
 #-------------------------------------------------------------
 # aliases for homebrew
+# Homebrew temporarily disabled
+# Reinstalled 25 April 2015
 #-------------------------------------------------------------
 
 # system finds old nano, not newer one installed by homebrew
-alias nano='/usr/local/bin/nano'
+# alias nano='/usr/local/bin/nano'
 
 # brew update readline
 #   LDFLAGS:  -L/usr/local/opt/readline/lib
@@ -81,14 +87,15 @@ alias flush="dscacheutil -flushcache"  # Flush Directory Service cache
 alias trimcopy="tr -d '\n' | pbcopy"  # Trim new lines and copy to clipboard
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"  # delete ds_store
 alias fs="stat -f \"%z bytes\""        # file size
+alias perms='stat -f %Mp%Lp '  # show permissions from terminal
 
 
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedesk="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesk="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 #-------------------------------------------------------------
 # aliases for ls commands
@@ -107,19 +114,20 @@ alias g="git"
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
-# Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"  # Undo a `git push`
+alias glog="git --no-pager log"    # show log without escapes
+
 
 #-------------------------------------------------------------
 # Network support: IP addresses
 #-------------------------------------------------------------
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
 alias extip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
 
 # Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"  # Enhanced WHOIS lookups
+# alias whois="whois -h whois-servers.net"  # Enhanced WHOIS lookups
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"

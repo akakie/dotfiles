@@ -6,9 +6,15 @@
 # of the path variable.
 ##
 
+
 PATH=/Users/lewy/bin
-# PATH=$PATH:/usr/local/Cellar
-# PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p362/bin
+
+# Homebrew temporarily disabled
+# Homebrew reinstalled 25 April 2015
+PATH=$PATH:~/.composer/vendor/bin
+PATH=$PATH:/usr/local/Cellar  # enabled 28 Oct 2014
+PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p362/bin
+
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/bin
@@ -28,3 +34,4 @@ PATH=$PATH:/sbin
 # ...
 
 export PATH
+

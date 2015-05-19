@@ -6,6 +6,7 @@
 
 # On login to shell, display greeting messages and initialize
 # Homebrew application.
+# Homebrew temporarily disabled
 
 echo ""
 echo -n "Unix on Mac OS X. Logged in as "; whoami
@@ -26,8 +27,8 @@ xattr -l ~/Library/Application\ Support/TextMate/Managed/Cache/org.textmate.upda
 # nohup brew update  # wait for results
 # echo 'list outdated formulae';
 # nohup brew outdated &  # in background
-echo "Updating brew" 
-brew update > /dev/null &
+# echo "Updating brew" 
+# brew update > /dev/null &
 
 
 # User specific environment and startup programs
@@ -58,7 +59,7 @@ source ~/bin/dotfiles/bash/prompt
 
 
 # init z   https://github.com/rupa/z
-. ~/code/z/z.sh
+# . ~/code/z/z.sh
 
 # init rvm
 #TODO consider rvm = Ruby Version Manager. (Not installed)

@@ -19,8 +19,9 @@ export MYNAME='Lewis Overton'
 #export EDITOR="subl -W"
  export EDITOR="mate"
 
+# Homebrew temporarily disabled
 # Choose PHP version PHP54 installed by Brew 21 Jun 2014, 8:46 PM
-export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
+# export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
