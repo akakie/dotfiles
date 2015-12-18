@@ -1,7 +1,8 @@
 # .bash_exports
 # for remote hosts
 
-export LESS='-M'
+#export LESS='-M'
+export LESS="-erX"
 export MYNAME='Lewis Overton'
 
 #put path here (well, maybe)

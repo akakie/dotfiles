@@ -6,9 +6,9 @@ echo "Directory $PWD";
 # -> Prevents accidentally clobbering files.
 # Note: use trash instead of rm to delete files/folders
 #-------------------------------------------------------------
-alias rm='remove -i'
-alias cp='copy -i'
-alias mv='move -i'
+#alias rm='remove -i'
+#alias cp='copy -i'
+#alias mv='move -i'
 
 # Mac Helpers
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
@@ -35,7 +35,8 @@ alias ..="cd .."
 alias cd..="cd .."
 
 
-alias sites='cd ~/sites'
+#alias sites='cd ~/sites'
+alias sites='cd /Library/WebServer/Documents/'
 alias desk='cd ~/Desktop'
 alias down='cd ~/Downloads'
 alias www='cd ~/www'

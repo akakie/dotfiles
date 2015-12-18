@@ -1,12 +1,13 @@
-# bashrc  
+# bashrc
+
+# IMPORTANT
+
 # On Mac OS X, link to this as bash_profile because
 # Mac loads bash_profile on login. Unix loads bashrc on login.
 #
 # ln -s ~/bin/dotfiles/bash/bashrc ~/.bash_profile
 
-# On login to shell, display greeting messages and initialize
-# Homebrew application.
-# Homebrew temporarily disabled
+# On login to shell, display greeting messages
 
 echo ""
 echo -n "Unix on Mac OS X. Logged in as "; whoami
@@ -17,29 +18,35 @@ cal
 echo "Last update to TextMate bundles"
 xattr -l ~/Library/Application\ Support/TextMate/Managed/Cache/org.textmate.updates.default
 
+# Homebrew (optionally) disabled because it slows shell startup
+echo "Homebrew not initialized"
+
 ###
 # Update Homebrew and list outdated formulae (in nohup.out)
 ###
 # echo ""
 # rm nohup.out  # clear previous update
-# echo 'update Homebrew';  
+# echo 'update Homebrew';
 # echo "Updating HomeBrew. Please be patient"
 # nohup brew update  # wait for results
 # echo 'list outdated formulae';
 # nohup brew outdated &  # in background
-# echo "Updating brew" 
+# echo "Updating brew"
 # brew update > /dev/null &
+###
 
 
 # User specific environment and startup programs
 echo ""
 echo -n "Uptime: "; uptime
-##
+
+###
+# terminal configuration modeled after
 # Paul Irish dotfiles for setting up work environment
 # source: paulirish/dotfiles - GitHub
 # Includes adaptations for Lewy MacBook
 # Component: .bash_profile (set up basics)
-##
+###
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 #CHANGED to add bash_ prefix to files that didn't already have it (prompt)
@@ -47,22 +54,26 @@ echo -n "Uptime: "; uptime
 #	[ -r "$file" ] && source "$file"
 #done
 #unset file
+###
 
-# Lewy's simplified startup
+# Lewy's simplified startup version
 source ~/bin/dotfiles/bash/functions
 source ~/bin/dotfiles/bash/path
 source ~/bin/dotfiles/bash/alias
 source ~/bin/dotfiles/bash/exports
 source ~/bin/dotfiles/bash/prompt
 
+###
+# Utilities added
+###
 
-
-
+# Enable z command (from homebrew) to change directors
+. `brew --prefix`/etc/profile.d/z.sh
 # init z   https://github.com/rupa/z
 # . ~/code/z/z.sh
 
-# init rvm
-#TODO consider rvm = Ruby Version Manager. (Not installed)
+# init rvm (Not installed)
+#TODO consider rvm = Ruby Version Manager. 
 #source ~/.rvm/scripts/rvm
 
 # Case-insensitive globbing (used in pathname expansion)
