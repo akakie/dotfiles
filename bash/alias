@@ -70,6 +70,9 @@ alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
 # brew update readline
 #   LDFLAGS:  -L/usr/local/opt/readline/lib
 #   CPPFLAGS: -I/usr/local/opt/readline/include
+# Use nano from homebrew
+LDFLAGS:  -L/usr/local/opt/gettext/lib
+CPPFLAGS: -I/usr/local/opt/gettext/include
 
 #-------------------------------------------------------------
 # aliases for commands
